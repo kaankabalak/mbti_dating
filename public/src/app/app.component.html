@@ -7,16 +7,18 @@ and provides general assumptions about how your personality type is best suited 
 
 <h2>Create an account</h2>
 
+{{ user.name }}
+
 <div id="card">
   <div id="image">
       <i class="fa fa-user" aria-hidden="true"></i>      
   </div>
   <div id="card-center">
       <div id="card-top">
-        <input type="text" id="name" placeholder="Name">
-        <input type="number" id="age" placeholder="Age">
+        <input type="text" id="name" [(ngModel)]="user.name" placeholder="Name">
+        <input type="number" id="age" [(ngModel)]="user.age" placeholder="Age">
       </div>
-    <textarea id="description" placeholder="Description (max. 150 chars)"></textarea>
+    <textarea id="description"  [(ngModel)]="user.description" placeholder="Description (max. 150 chars)"></textarea>
     <input type="submit" id="submit" value="Take the test!">
   </div>
 </div>

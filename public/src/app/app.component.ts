@@ -8,4 +8,9 @@ import { HttpService } from './http.service';
 })
 export class AppComponent {
   title = 'app';
+  user = {
+    name: '',
+    age: '',
+    description: ''
+  }
 }

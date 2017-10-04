@@ -16,8 +16,15 @@ p {
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
 }
-#card input, textarea {
+textarea, #name, #age, #description {
+    background-color: transparent;
+    border: 0;
     margin-bottom: 10px;
+}
+#name, #age {
+    border-bottom: 2px solid blue !important;
+    font-size: 12pt;
+    font-family: serif;
 }
 #card-center {
     margin: 0 auto;
@@ -34,13 +41,25 @@ i {
     width: 100px;
     margin: 80px;
 }
+#name {
+    width: 150px;
+}
 #age {
     width: 30px;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 #description {
     height: 100px;
     width: 256px;
     resize: none;
+    font-family: serif;
 }
 #image {
     background-color: grey;
