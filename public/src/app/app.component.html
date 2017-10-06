@@ -1,38 +1,35 @@
-<h1>Welcome to MBTI Dating!!</h1>
+<h1>Welcome to MBTI Dating!</h1>
 
 <p>The Myers-Briggs Type Indicator (MBTI) is an assessment that is believed to measure psychological preferences in 
 how people perceive the world and make decisions. According to the Myers-Briggs test, there are 16 different types 
 of personalities. The test consists of a series of questions, and your answers determine what type of personality you have 
 and provides general assumptions about how your personality type is best suited for success in terms of careers, communication, etc.</p>
 
-<h2>Create an account</h2>
+<p>By using this website you can find your next partner based on the compability of your personalities.</p>
+
+<h2>Log in or create an account</h2>
 
 {{ user | json }}
 
 <div id="wrapper">
-  <div id="form">
-    <div id="name-age">
-      <input type="text" id="name" [(ngModel)]="user.name" placeholder="Name">
-      <input type="number" id="age" [(ngModel)]="user.age" placeholder="Age">
-    </div>  
-    <input type="text" id="image-url" [(ngModel)]="user.imageUrl" placeholder="Image URL">
-    <textarea id="description"  [(ngModel)]="user.description" 
-    placeholder="Description (max. 150 chars)" maxlength="150">
-    </textarea>
-    <input type="submit" id="submit" value="Submit">
-  </div>
-  
   <div id="card">
     <div id="image">
         <i class="fa fa-user" aria-hidden="true"></i>      
     </div>
-    <div id="card-center">
-        <div id="card-top">
-          <label>{{ user.name }}, {{ user.age }}</label>
-        </div>
-        <div id="card-bottom">
-          <p>{{ user.description }}</p>
-        </div>
+    <div id="form">
+      <div id="name-age">
+        <input type="text" id="name" [(ngModel)]="user.name" placeholder="Name">
+        <input type="number" id="age" [(ngModel)]="user.age" placeholder="Age">
+      </div>  
+      <input type="text" class="input-field" [(ngModel)]="user.email" placeholder="Email">
+      <input type="text" class="input-field" [(ngModel)]="user.imageUrl" placeholder="Image URL">
+      <textarea id="description"  [(ngModel)]="user.description" 
+      placeholder="Description (max. 150 chars)" maxlength="150">
+      </textarea>
+      <input type="submit" id="submit" value="Submit">
     </div>
+  </div>
+  <div id="form">
+    
   </div>
 </div>
