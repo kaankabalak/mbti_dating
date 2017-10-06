@@ -1,5 +1,6 @@
-wrapper {
-    padding: 10px;
+#wrapper {
+    margin: 0 auto;
+    width: 640px;
 }
 h1, h2 {
     text-align: center;
@@ -7,7 +8,28 @@ h1, h2 {
 p {
     margin: 0 20%;
 }
+#form {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 75px;
+}
+#form input,textarea {
+    display: block;
+}
+#name-age input{
+    display: inline-block;
+    vertical-align: top;
+}
+#name-age, textarea {
+    margin-bottom: 7px;
+}
+#image-url {
+    width: 196px;
+    margin-bottom: 7px;
+}
 #card {
+    display: inline-block;
+    vertical-align: top;
     width: 300px;
     height: 500px;
     margin: 0 auto;
@@ -16,24 +38,22 @@ p {
     -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
 }
-textarea, #name, #age, #description {
-    background-color: transparent;
-    border: 0;
-    margin-bottom: 10px;
-}
-#name, #age {
-    border-bottom: 2px solid blue !important;
-    font-size: 12pt;
-    font-family: serif;
-}
 #card-center {
     margin: 0 auto;
     width: 260px;
-    background-color: orange;
+    height: 175px;
 }
 #card-top {
     display: inline-block;
-    background-color: red;
+    font-size: 16pt;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+#card-bottom p{
+    margin: 0 !important;
+    width: 260px;
+    height: 180px;
+    word-wrap: break-word;
 }
 i {
     font-size: 100px;
@@ -42,10 +62,10 @@ i {
     margin: 80px;
 }
 #name {
-    width: 150px;
+    width: 149px;
 }
 #age {
-    width: 30px;
+    width: 35px;
 }
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -56,8 +76,8 @@ input[type="number"] {
     -moz-appearance: textfield;
 }
 #description {
-    height: 100px;
-    width: 256px;
+    height: 75px;
+    width: 200px;
     resize: none;
     font-family: serif;
 }
@@ -70,6 +90,6 @@ input[type="number"] {
     height: 260px;
 }
 #submit {
-    width: 100%;
+    /* width: 100%; */
     padding: 5px;
 }

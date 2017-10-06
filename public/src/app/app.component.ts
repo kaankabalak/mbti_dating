@@ -11,6 +11,7 @@ export class AppComponent {
   user = {
     name: '',
     age: '',
+    imageUrl: '',
     description: ''
   }
 }
