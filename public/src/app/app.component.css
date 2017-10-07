@@ -1,18 +1,29 @@
 #wrapper {
     margin: 0 auto;
-    width: 640px;
+    width: 500px;
 }
 h1, h2 {
     text-align: center;
 }
 p {
-    margin: 0 20%;
+    margin: 0 20% 10px;
 }
 #form {
     display: inline-block;
     vertical-align: top;
     width: 260px;
     margin: 0 20px 20px 20px;
+}
+#login-form {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 94px;
+}
+#login-form #submit {
+    width: 158px;
+}
+#login-form input,textarea {
+    display: block;
 }
 #form input,textarea {
     display: block;
@@ -27,6 +38,14 @@ p {
 .input-field {
     width: 196px;
     margin-bottom: 7px;
+}
+.login-field {
+    width: 150px;
+    margin-bottom: 7px;
+}
+#card-container {
+    display: inline-block;
+    vertical-align: top;
 }
 #card {
     display: inline-block;
