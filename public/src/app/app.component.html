@@ -7,33 +7,4 @@ and provides general assumptions about how your personality type is best suited 
 
 <p>By using this website you can find your next partner based on the compability of your personalities.</p>
 
-<p>{{ user | json }}</p>
-
-<div id="wrapper">
-  <div id="login-form">
-    <h2>Log in</h2>
-    <input type="text" class="login-field" [(ngModel)]="user.name" placeholder="Email">
-    <input type="password" class="login-field" [(ngModel)]="user.age" placeholder="Password">
-    <input type="submit" id="submit" value="Login">
-  </div>
-  <div id="card-container">
-    <h2>Create an account</h2>
-    <div id="card">
-        <div id="image">
-            <i class="fa fa-user" aria-hidden="true"></i>      
-        </div>
-        <div id="form">
-          <div id="name-age">
-            <input type="text" id="name" [(ngModel)]="user.name" placeholder="Name">
-            <input type="number" id="age" [(ngModel)]="user.age" placeholder="Age">
-          </div>  
-          <input type="text" class="input-field" [(ngModel)]="user.email" placeholder="Email">
-          <input type="text" class="input-field" [(ngModel)]="user.imageUrl" placeholder="Image URL">
-          <textarea id="description"  [(ngModel)]="user.description" 
-          placeholder="Description (max. 150 chars)" maxlength="150">
-          </textarea>
-          <input type="submit" id="submit" value="Submit">
-        </div>
-      </div>
-  </div>
-</div>
+<app-loginreg></app-loginreg>

@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { HttpService } from './http.service';
 
 import { AppComponent } from './app.component';
+import { LoginregComponent } from './loginreg/loginreg.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginregComponent
   ],
   imports: [
     BrowserModule,
