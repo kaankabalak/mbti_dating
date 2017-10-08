@@ -1,10 +1,10 @@
-<p>{{ user | json }}</p>
+<p>{{ newuser | json }}</p>
 
 <div id="wrapper">
   <div id="login-form">
     <h2>Log in</h2>
-    <input type="text" class="login-field" [(ngModel)]="user.name" placeholder="Email">
-    <input type="password" class="login-field" [(ngModel)]="user.age" placeholder="Password">
+    <input type="text" class="login-field" [(ngModel)]="user.email" placeholder="Email">
+    <input type="password" class="login-field" [(ngModel)]="user.password" placeholder="Password">
     <input type="submit" id="submit" value="Login">
   </div>
   <div id="card-container">
@@ -14,16 +14,31 @@
             <i class="fa fa-user" aria-hidden="true"></i>      
         </div>
         <div id="form">
-          <div id="name-age">
-            <input type="text" id="name" [(ngModel)]="user.name" placeholder="Name">
-            <input type="number" id="age" [(ngModel)]="user.age" placeholder="Age">
+          <div class="multi-input">
+            <input type="text" id="name" [(ngModel)]="newuser.name" placeholder="Name">
+            <input type="number" id="age" [(ngModel)]="newuser.age" placeholder="Age">
           </div>  
-          <input type="text" class="input-field" [(ngModel)]="user.email" placeholder="Email">
-          <input type="text" class="input-field" [(ngModel)]="user.imageUrl" placeholder="Image URL">
-          <textarea id="description"  [(ngModel)]="user.description" 
+          <div class="multi-input">
+            <select name="gender" [(ngModel)]="newuser.gender">
+                <option value="" [disabled]="true">Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <select name="lookingFor" [(ngModel)]="newuser.lookingFor">                
+                <option value="" [disabled]="true">Looking for...</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+          </div>  
+          <input type="text" class="input-field" [(ngModel)]="newuser.email" placeholder="Email">
+          <input type="password" class="input-field" [(ngModel)]="newuser.password" placeholder="Password">
+          <input type="text" class="input-field" [(ngModel)]="newuser.imageUrl" placeholder="Image URL">
+          <textarea id="description"  [(ngModel)]="newuser.description" 
           placeholder="Description (max. 150 chars)" maxlength="150">
           </textarea>
-          <input type="submit" id="submit" value="Submit">
+          <input type="submit" id="submit" value="Take the test!">
         </div>
       </div>
   </div>

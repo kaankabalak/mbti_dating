@@ -9,12 +9,20 @@ export class LoginregComponent implements OnInit {
 
   constructor() { }
 
-  user = {
+  newuser = {
     name: '',
     age: '',
+    gender: '',
+    lookingFor: '',
     email: '',
+    password: '',
     imageUrl: '',
     description: ''
+  };
+
+  user = {
+    email: '',
+    password: ''
   }
 
   ngOnInit() {

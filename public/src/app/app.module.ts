@@ -6,11 +6,13 @@ import { HttpService } from './http.service';
 
 import { AppComponent } from './app.component';
 import { LoginregComponent } from './loginreg/loginreg.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginregComponent
+    LoginregComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
