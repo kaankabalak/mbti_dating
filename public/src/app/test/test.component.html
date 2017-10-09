@@ -1,3 +1,9 @@
-<p>
-  test works!
-</p>
+<div *ngFor="let element of questions; let idx = index">
+  <p>{{ element }}</p>
+  <input type="radio" name="q{{idx}}" value="male">
+  <label>{{ options[idx][0] }}</label>
+  
+  <input type="radio" name="q{{idx}}" value="male">
+  <label>{{ options[idx][1] }}</label>
+</div>
+
