@@ -20,13 +20,13 @@ h2 {
 #login-form input,textarea {
     display: block;
 }
-#form {
+#card form {
     display: inline-block;
     vertical-align: top;
     width: 260px;
     margin: 0 20px 20px 20px;
 }
-#form input,textarea {
+form input,textarea {
     display: block;
 }
 .multi-input input{

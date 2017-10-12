@@ -1,9 +1,28 @@
-<div *ngFor="let element of questions; let idx = index">
-  <p>{{ element }}</p>
-  <input type="radio" name="q{{idx}}" value="male">
-  <label>{{ options[idx][0] }}</label>
-  
-  <input type="radio" name="q{{idx}}" value="male">
-  <label>{{ options[idx][1] }}</label>
+{{ test | json }}
+
+
+<div class="survey" *ngFor="let element of questions; let idx = index">
+  <div *ngFor="let placeholder of questionBank | slice:0:10; let num = index">
+    <p>{{ element[num] }}</p>
+    <input type="radio" name="page{{idx}}-q{{num}}" [(ngModel)]="test.answers[idx*10+num]" value="a">
+    <label>{{ options[idx][num][0] }}</label>
+    
+    <input type="radio" name="page{{idx}}-q{{num}}" [(ngModel)]="test.answers[idx*10+num]" value="b">
+    <label>{{ options[idx][num][1] }}</label>
+  </div>
 </div>
 
+<!-- <form>
+  <div *ngFor="let element of questions; let idx = index">    
+    <p>{{ element }}</p>
+    <input type="radio" name="q{{idx}}" [(ngModel)]="test.answers[idx]" value="a">
+    <label>{{ options[idx][0] }}</label>
+    
+    <input type="radio" name="q{{idx}}" [(ngModel)]="test.answers[idx]" value="b">
+    <label>{{ options[idx][1] }}</label>
+    <div *ngIf="idx%10 == 9">
+      <hr>
+    </div>
+  </div>
+  <input type="submit" id="submit" value="Submit">
+</form> -->

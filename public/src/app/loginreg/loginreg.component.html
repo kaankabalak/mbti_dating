@@ -3,9 +3,11 @@
 <div id="wrapper">
   <div id="login-form">
     <h2>Log in</h2>
-    <input type="text" class="login-field" [(ngModel)]="user.email" placeholder="Email">
-    <input type="password" class="login-field" [(ngModel)]="user.password" placeholder="Password">
-    <input type="submit" id="submit" value="Login">
+    <form>
+      <input type="text" class="login-field" [(ngModel)]="user.email" name="emailLogin" placeholder="Email">
+      <input type="password" class="login-field" [(ngModel)]="user.password" name="passwordLogin" placeholder="Password">
+      <input type="submit" id="submit" value="Login">
+    </form>
   </div>
   <div id="card-container">
     <h2>Create an account</h2>
@@ -13,10 +15,10 @@
         <div id="image">
             <i class="fa fa-user" aria-hidden="true"></i>      
         </div>
-        <div id="form">
+        <form>
           <div class="multi-input">
-            <input type="text" id="name" [(ngModel)]="newuser.name" placeholder="Name">
-            <input type="number" id="age" [(ngModel)]="newuser.age" placeholder="Age">
+            <input type="text" id="name" [(ngModel)]="newuser.name" name="name" placeholder="Name">
+            <input type="number" id="age" [(ngModel)]="newuser.age" name="age" placeholder="Age">
           </div>  
           <div class="multi-input">
             <select name="gender" [(ngModel)]="newuser.gender">
@@ -32,14 +34,14 @@
                 <option value="other">Other</option>
             </select>
           </div>  
-          <input type="text" class="input-field" [(ngModel)]="newuser.email" placeholder="Email">
-          <input type="password" class="input-field" [(ngModel)]="newuser.password" placeholder="Password">
-          <input type="text" class="input-field" [(ngModel)]="newuser.imageUrl" placeholder="Image URL">
-          <textarea id="description"  [(ngModel)]="newuser.description" 
+          <input type="text" class="input-field" [(ngModel)]="newuser.email" name="emailRegister" placeholder="Email">
+          <input type="password" class="input-field" [(ngModel)]="newuser.password" name="passwordRegister" placeholder="Password">
+          <input type="text" class="input-field" [(ngModel)]="newuser.imageUrl" name="image" placeholder="Image URL">
+          <textarea id="description"  [(ngModel)]="newuser.description" name="description"
           placeholder="Description (max. 150 chars)" maxlength="150">
           </textarea>
           <input type="submit" id="submit" value="Take the test!">
-        </div>
+        </form>
       </div>
   </div>
 </div>

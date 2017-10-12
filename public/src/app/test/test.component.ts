@@ -13,7 +13,7 @@ export class TestComponent implements OnInit {
     answers: []
   }
 
-  questions = [
+  questionBank = [
     "When the phone rings do you: ",
     "Are you more: ",
     "Is it worse to: ",
@@ -86,220 +86,107 @@ export class TestComponent implements OnInit {
     "Are you more: "
   ];
 
-  options = [
-    [
-      "hurry to get it first ", "hope someone else will answer "
-    ],
-    [
-      "observant than introspective ", "introspective than observant "
-    ],
-    [
-      "have your head in the clouds ", "be in a rut "
-    ],
-    [
-      "firm than gentle ", "gentle than firm "
-    ],
-    [
-      "critical judgments ", "value judgments "
-    ],
-    [
-      "take time to straighten up ", "tolerate pretty well "
-    ],
-    [
-      "make up your mind quickly ", "pick and choose at some length "
-    ],
-    [
-      "chat with others ", "stick to business "
-    ],
-    [
-      "sensible than idealistic ", "idealistic than sensible "
-    ],
-    [
-      "what is actual ", "what is possible "
-    ],
-    [
-      "data ", "desires "
-    ],
-    [
-      "objective and impersonal ", "friendly and personal "
-    ],
-    [
-      "signed, sealed and delivered ", "settled on a handshake "
-    ],
-    [
-      "a finished project ", "work in progress "
-    ],
-    [
-      "interact with many, even strangers ", "interact with a few friends "
-    ],
-    [
-      "factual than speculative ", "speculative than factual "
-    ],
-    [
-      "say what they mean ", "use metaphors and symbolism "
-    ],
-    [
-      "consistency of thought ", "harmonious relationships "
-    ],
-    [
-      "frank and straightforward ", "warm and considerate "
-    ],
-    [
-      "scheduled ", "unscheduled "
-    ],
-    [
-      "final, unalterable statements ", "tentative, preliminary statements "
-    ],
-    [
-      "energize you ", "tax your reserves "
-    ],
-    [
-      "speak for themselves ", "illustrate principles "
-    ],
-    [
-      "somewhat annoying ", "rather fascinating "
-    ],
-    [
-      "stick to your guns ", "look for common ground "
-    ],
-    [
-      "just ", "merciful "
-    ],
-    [
-      "point out mistakes ", "try to please others "
-    ],
-    [
-      "after a decision ", "before a decision "
-    ],
-    [
-      "say what’s on your mind ", "keep your ears open "
-    ],
-    [
-      "usually reliable ", "frequently questionable "
-    ],
-    [
-      "make themselves useful enough ", "exercise their fantasy enough "
-    ],
-    [
-      "firm and unbending ", "forgiving and lenient "
-    ],
-    [
-      "a cool‐headed person ", "a warm‐hearted person "
-    ],
-    [
-      "nailing things down ", "exploring the possibilities "
-    ],
-    [
-      "deliberate than spontaneous ", "spontaneous than deliberate "
-    ],
-    [
-      "an outgoing person ", "a private person "
-    ],
-    [
-      "a practical sort of person ", "a fanciful sort of person "
-    ],
-    [
-      "particulars than generalities ", "generalities than particulars "
-    ],
-    [
-      '"There’s a logical person"' , '"There’s a sentimental person"'
-    ],
-    [
-      "your thoughts ", "your feelings "
-    ],
-    [
-      "tie up all the loose ends ", "move on to something else "
-    ],
-    [
-      "to deadlines ", "just whenever "
-    ],
-    [
-      "is rather talkative ", "doesn’t miss much "
-    ],
-    [
-      "more literally ", "more figuratively "
-    ],
-    [
-      "what is right in front of you ", "what can only be imagined "
-    ],
-    [
-      "a softy ", "hard‐nosed "
-    ],
-    [
-      "too unsympathetic ", "too sympathetic "
-    ],
-    [
-      "rather carefully ", "somewhat impulsively "
-    ],
-    [
-      "hurried than leisurely ", "leisurely than hurried "
-    ],
-    [
-      "be sociable with your colleagues ", "keep more to yourself "
-    ],
-    [
-      "your experiences ", "your conceptions "
-    ],
-    [
-      "down to earth ", "somewhat removed "
-    ],
-    [
-      "tough‐minded person ", "tender‐hearted person "
-    ],
-    [
-      "reasonable ", "devoted "
-    ],
-    [
-      "settled and decided ", "just penciled in "
-    ],
-    [
-      "serious and determined ", "easy going "
-    ],
-    [
-      "a good conversationalist ", "a good listener "
-    ],
-    [
-      "a strong hold on reality ", "a vivid imagination "
-    ],
-    [
-      "fundamentals ", "overtones "
-    ],
-    [
-      "to be too compassionate ", "to be too dispassionate "
-    ],
-    [
-      "convincing evidence ", "a touching appeal "
-    ],
-    [
-      "coming to closure ", "keeping your options open "
-    ],
-    [
-      "make sure things are arranged ", "just let things happen naturally "
-    ],
-    [
-      "easy to approach ", "somewhat reserved "
-    ],
-    [
-      "action and adventure ", "fantasy and heroism "
-    ],
-    [
-      "put others to good use ", "identify with others "
-    ],
-    [
-      "strength of will ", "strength of emotion "
-    ],
-    [
-      "thick‐skinned ", "thin‐skinned "
-    ],
-    [
-      "disorderliness ", "opportunities for change "
-    ],
-    [
-      "routinized than whimsical ", "whimsical than routinized "
-    ],
+  optionBank = [
+    ["hurry to get it first ", "hope someone else will answer "],
+    ["observant than introspective ", "introspective than observant "],
+    ["have your head in the clouds ", "be in a rut "],
+    ["firm than gentle ", "gentle than firm "],
+    ["critical judgments ", "value judgments "],
+    ["take time to straighten up ", "tolerate pretty well "],
+    ["make up your mind quickly ", "pick and choose at some length "],
+    ["chat with others ", "stick to business "],
+    ["sensible than idealistic ", "idealistic than sensible "],
+    ["what is actual ", "what is possible "],
+    ["data ", "desires "],
+    ["objective and impersonal ", "friendly and personal "],
+    ["signed, sealed and delivered ", "settled on a handshake "],
+    ["a finished project ", "work in progress "],
+    ["interact with many, even strangers ", "interact with a few friends "],
+    ["factual than speculative ", "speculative than factual "],
+    ["say what they mean ", "use metaphors and symbolism "],
+    ["consistency of thought ", "harmonious relationships "],
+    ["frank and straightforward ", "warm and considerate "],
+    ["scheduled ", "unscheduled "],
+    ["final, unalterable statements ", "tentative, preliminary statements "],
+    ["energize you ", "tax your reserves "],
+    ["speak for themselves ", "illustrate principles "],
+    ["somewhat annoying ", "rather fascinating "],
+    ["stick to your guns ", "look for common ground "],
+    ["just ", "merciful "],
+    ["point out mistakes ", "try to please others "],
+    ["after a decision ", "before a decision "],
+    ["say what’s on your mind ", "keep your ears open "],
+    ["usually reliable ", "frequently questionable "],
+    ["make themselves useful enough ", "exercise their fantasy enough "],
+    ["firm and unbending ", "forgiving and lenient "],
+    ["a cool‐headed person ", "a warm‐hearted person "],
+    ["nailing things down ", "exploring the possibilities "],
+    ["deliberate than spontaneous ", "spontaneous than deliberate "],
+    ["an outgoing person ", "a private person "],
+    ["a practical sort of person ", "a fanciful sort of person "],
+    ["particulars than generalities ", "generalities than particulars "],
+    ['"There’s a logical person"' , '"There’s a sentimental person"'],
+    ["your thoughts ", "your feelings "],
+    ["tie up all the loose ends ", "move on to something else "],
+    ["to deadlines ", "just whenever "],
+    ["is rather talkative ", "doesn’t miss much "],
+    ["more literally ", "more figuratively "],
+    ["what is right in front of you ", "what can only be imagined "],
+    ["a softy ", "hard‐nosed "],
+    ["too unsympathetic ", "too sympathetic "],
+    ["rather carefully ", "somewhat impulsively "],
+    ["hurried than leisurely ", "leisurely than hurried "],
+    ["be sociable with your colleagues ", "keep more to yourself "],
+    ["your experiences ", "your conceptions "],
+    ["down to earth ", "somewhat removed "],
+    ["tough‐minded person ", "tender‐hearted person "],
+    ["reasonable ", "devoted "],
+    ["settled and decided ", "just penciled in "],
+    ["serious and determined ", "easy going "],
+    ["a good conversationalist ", "a good listener "],
+    ["a strong hold on reality ", "a vivid imagination "],
+    ["fundamentals ", "overtones "],
+    ["to be too compassionate ", "to be too dispassionate "],
+    ["convincing evidence ", "a touching appeal "],
+    ["coming to closure ", "keeping your options open "],
+    ["make sure things are arranged ", "just let things happen naturally "],
+    ["easy to approach ", "somewhat reserved "],
+    ["action and adventure ", "fantasy and heroism "],
+    ["put others to good use ", "identify with others "],
+    ["strength of will ", "strength of emotion "],
+    ["thick‐skinned ", "thin‐skinned "],
+    ["disorderliness ", "opportunities for change "],
+    ["routinized than whimsical ", "whimsical than routinized "],
   ];
 
+  questions = [];
+  options = [];
+
   ngOnInit() {
+    for( let i=0; i<this.optionBank.length; i++) {
+      this.test.answers.push(null);
+    }
+
+    let questionArr = [];
+    let optionArr = [];
+
+    for( let i = 0; i<this.optionBank.length; i++) {
+      
+      if(i % 10 != 9) {
+        questionArr.push(this.questionBank[i]);
+        optionArr.push(this.optionBank[i]);
+      } else if(i % 10 == 9) {
+        questionArr.push(this.questionBank[i]);
+        optionArr.push(this.optionBank[i]);
+        this.questions.push(questionArr);
+        this.options.push(optionArr);
+        questionArr = [];
+        optionArr = [];
+      }
+    }
+
+    console.log(this.questions);
+    console.log(this.options);
   }
 
 }
