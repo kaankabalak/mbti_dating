@@ -29,6 +29,11 @@ h2 {
 form input,textarea {
     display: block;
 }
+i.fa-venus-mars, i.fa-binoculars {
+    margin: 0;
+    font-size: 13px;
+    width: 17px;
+}
 .multi-input input{
     display: inline-block !important;
     vertical-align: top;
@@ -37,7 +42,7 @@ form input,textarea {
     margin-bottom: 7px;
 }
 select {
-    width: 100px;
+    width: 79px;
     height: 23px;
     display: inline-block;
     vertical-align: top;

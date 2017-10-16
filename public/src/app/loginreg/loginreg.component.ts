@@ -14,6 +14,7 @@ export class LoginregComponent implements OnInit {
     age: '',
     gender: '',
     lookingFor: '',
+    zipcode: '',
     email: '',
     password: '',
     imageUrl: '',

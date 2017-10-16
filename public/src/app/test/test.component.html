@@ -1,6 +1,5 @@
 {{ test | json }}
 
-
 <div class="survey" *ngFor="let element of questions; let idx = index">
   <div *ngFor="let placeholder of questionBank | slice:0:10; let num = index">
     <p>{{ element[num] }}</p>
