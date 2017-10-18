@@ -1,4 +1,11 @@
 .survey {
     background-color: gray;
     margin: 20px;
+    width: 600px;
+    margin: 0 auto;
+}
+p {
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: 14px;
 }

@@ -9,6 +9,8 @@ export class TestComponent implements OnInit {
 
   constructor() { }
 
+  count = 0;
+
   test = {
     answers: []
   }
@@ -187,6 +189,10 @@ export class TestComponent implements OnInit {
 
     console.log(this.questions);
     console.log(this.options);
+  }
+
+  onSubmit() {
+    console.log("submit");
   }
 
 }
