@@ -164,6 +164,8 @@ export class TestComponent implements OnInit {
   questions = [];
   options = [];
 
+  personality = '';
+
   ngOnInit() {
     for( let i=0; i<this.optionBank.length; i++) {
       this.test.answers.push(null);
@@ -193,6 +195,32 @@ export class TestComponent implements OnInit {
 
   onSubmit() {
     console.log("submit");
+    // e or i
+    this.findAttribute([0]);
+    // n or s
+    this.findAttribute([1,2]);
+    // t or f
+    this.findAttribute([3,4]);
+    // j or p
+    this.findAttribute([5,6]);
+  }
+
+  findAttribute(numIdxArr) {
+    let countA = 0;
+    let countB = 0;
+    // extrovert(E) or introvert(I) 
+    for( let j = 0; j < numIdxArr.length; j++) {
+      for( let i = numIdxArr[j]; i < this.test.answers.length; i+=7) {
+        if(this.test.answers[i] == "a") {
+          countA++;
+        } else if( this.test.answers[i] == "b") {
+          countB++;
+        }
+      }
+    }
+    
+    console.log("A:", countA);
+    console.log("B:", countB);
   }
 
 }
