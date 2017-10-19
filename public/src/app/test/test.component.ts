@@ -164,7 +164,12 @@ export class TestComponent implements OnInit {
   questions = [];
   options = [];
 
-  personality = '';
+  personality = {
+    isE: null,
+    isS: null,
+    isT: null,
+    isJ: null
+  };
 
   ngOnInit() {
     for( let i=0; i<this.optionBank.length; i++) {
@@ -196,13 +201,13 @@ export class TestComponent implements OnInit {
   onSubmit() {
     console.log("submit");
     // e or i
-    this.findAttribute([0]);
-    // n or s
-    this.findAttribute([1,2]);
+    this.personality.isE = this.findAttribute([0]);
+    // s or n
+    this.personality.isS = this.findAttribute([1,2]);
     // t or f
-    this.findAttribute([3,4]);
+    this.personality.isT = this.findAttribute([3,4]);
     // j or p
-    this.findAttribute([5,6]);
+    this.personality.isJ = this.findAttribute([5,6]);
   }
 
   findAttribute(numIdxArr) {
@@ -218,9 +223,14 @@ export class TestComponent implements OnInit {
         }
       }
     }
-    
-    console.log("A:", countA);
-    console.log("B:", countB);
+
+    if( countA > countB) {
+      return true;
+    } else if( countA < countB) {
+      return false;
+    } else {
+      return "Equal";
+    }
   }
 
 }

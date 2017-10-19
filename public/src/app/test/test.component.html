@@ -1,8 +1,8 @@
 {{ test | json }}
-
+<br>
 {{ count }}
-
-{{ personality }}
+<br>
+{{ personality | json }}
 
 <div class="survey" *ngFor="let element of questions | slice:count:(count+1)">
   <div *ngFor="let placeholder of questionBank | slice:0:10; let num = index">
