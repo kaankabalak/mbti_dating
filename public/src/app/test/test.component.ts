@@ -9,6 +9,7 @@ export class TestComponent implements OnInit {
 
   constructor() { }
 
+  // Test related variables
   count = 0;
 
   test = {
@@ -163,25 +164,29 @@ export class TestComponent implements OnInit {
 
   questions = [];
   options = [];
+  
+  personalityCats = [["E","I"],["S","N"],["T","F"],["J","P"]];
 
+  // user related variables
   personality = {
     isE: null,
     isS: null,
     isT: null,
-    isJ: null
+    isJ: null,
+    result: ''
   };
 
   ngOnInit() {
-    for( let i=0; i<this.optionBank.length; i++) {
+    for (let i=0; i<this.optionBank.length; i++) {
       this.test.answers.push(null);
     }
 
     let questionArr = [];
     let optionArr = [];
 
-    for( let i = 0; i<this.optionBank.length; i++) {
+    for (let i = 0; i<this.optionBank.length; i++) {
       
-      if(i % 10 != 9) {
+      if (i % 10 != 9) {
         questionArr.push(this.questionBank[i]);
         optionArr.push(this.optionBank[i]);
       } else if(i % 10 == 9) {
@@ -208,12 +213,38 @@ export class TestComponent implements OnInit {
     this.personality.isT = this.findAttribute([3,4]);
     // j or p
     this.personality.isJ = this.findAttribute([5,6]);
+
+    // compute personality string
+    this.personality.result += (this.personality.isE === "Equal") ? "X" : (this.personality.isE ? "E" : "I");
+    this.personality.result += (this.personality.isS === "Equal") ? "X" : (this.personality.isS ? "S" : "N");
+    this.personality.result += (this.personality.isT === "Equal") ? "X" : (this.personality.isT ? "T" : "F");
+    this.personality.result += (this.personality.isJ === "Equal") ? "X" : (this.personality.isJ ? "J" : "P");
+
+    if (this.personality.result.indexOf("X") > -1) {
+      let indices = [];
+      let possibility = this.personality.result;
+      for (let i = 0; i < this.personality.result.length; i++) {
+        if (this.personality.result[i] === "X") {
+          indices.push(i);
+        }
+      }
+      console.log(indices);
+
+      for (let i = 0; i < indices.length; i++) {
+        if (this.personality.result[indices[i]] === "X") {
+          for (let j = 0; j < this.personalityCats[indices[i]].length; j++) {
+            console.log(indices[i]);
+          }
+        } 
+      }
+
+    }
   }
 
   findAttribute(numIdxArr) {
     let countA = 0;
     let countB = 0;
-    // extrovert(E) or introvert(I) 
+ 
     for( let j = 0; j < numIdxArr.length; j++) {
       for( let i = numIdxArr[j]; i < this.test.answers.length; i+=7) {
         if(this.test.answers[i] == "a") {

@@ -26,14 +26,12 @@
                 <option value="" [disabled]="true">Gender</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
-                <option value="other">Other</option>
             </select>
             <i class="fa fa-binoculars" aria-hidden="true"></i>            
             <select name="lookingFor" [(ngModel)]="newuser.lookingFor">                
                 <option value="" [disabled]="true">Seeking</option>
                 <option value="male">Male</option>
                 <option value="female">Female</option>
-                <option value="other">Other</option>
             </select>
           </div>  
           <input type="text" class="input-field" [(ngModel)]="newuser.zipcode" name="zipcode" placeholder="Zipcode">
