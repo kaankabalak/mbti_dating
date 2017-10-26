@@ -222,7 +222,9 @@ export class TestComponent implements OnInit {
 
     if (this.personality.result.indexOf("X") > -1) {
       let indices = [];
-      let possibility = this.personality.result;
+      let possibility = ""
+      let personalityList = [""];
+      let finalPersList = [];
       for (let i = 0; i < this.personality.result.length; i++) {
         if (this.personality.result[i] === "X") {
           indices.push(i);
@@ -230,16 +232,64 @@ export class TestComponent implements OnInit {
       }
       console.log(indices);
 
-      for (let i = 0; i < indices.length; i++) {
-        if (this.personality.result[indices[i]] === "X") {
-          for (let j = 0; j < this.personalityCats[indices[i]].length; j++) {
-            console.log(indices[i]);
+      // for (let i = 0; i < Math.pow(2,indices.length); i++) {
+      //   personalityList.push(this.personality.result);
+      // }
+
+      let count = 0;
+      for (let i = 0; i < this.personality.result.length; i++) {
+        if (this.personality.result[i] !== "X") {
+          for (let j = 0; j < personalityList.length; j++) {
+            personalityList[j] += this.personality.result[i];
           }
-        } 
+        }
+        else {
+          let length = personalityList.length;
+          for (let k = 0; k < length; k++) {
+            personalityList.push(personalityList[k]);
+          }
+          for (let k = 0; k < personalityList.length; k++) {
+            if (k < personalityList.length/2) {
+              personalityList[k] += this.personalityCats[i][0];
+            }
+            else {
+              personalityList[k] += this.personalityCats[i][1];
+            }
+          }
+          count++;
+        }
       }
 
+      console.log(personalityList);
+      
     }
   }
+
+  replaceAt(string, index, replace) {
+    console.log(string.substring(0, index) + replace + string.substring(index + 1));
+    return string.substring(0, index) + replace + string.substring(index + 1);
+  }
+
+  // determinePossiblePersonalities(str, arr, pos) {
+  //   if (arr === undefined) {
+  //     arr = [];
+  //   }
+  //   if (pos === undefined) {
+  //     pos = 0;
+  //   }
+  //   if (str.length == 1) {
+  //     if (str !== "X") {
+  //       for(let i = 0; i<arr.length; i++) {
+  //         arr[i] += str;
+  //       }
+  //     }
+  //     else {
+  //       for(let i = 0; i<arr.length; i++) {
+  //         arr.push(arr[i]);
+  //       }
+  //     }
+  //   }
+  // }
 
   findAttribute(numIdxArr) {
     let countA = 0;
