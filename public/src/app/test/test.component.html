@@ -19,6 +19,16 @@
   <button *ngIf="count == 6" (click)="onSubmit()">Submit</button>
 </div>
 
+<div class="personality-wrapper">
+<!-- <div class="personality-wrapper" *ngIf="personalityList.length > 1"> -->
+  <h3>Choose the personality type that is most suitable to you:</h3>
+  <div class="personality" *ngFor="let item of personalityList">
+    <h3>{{item}}</h3>
+    <label>"{{personalityDictionary[item][0]}}"</label>
+    <p>{{personalityDictionary[item][1]}}</p>
+  </div>
+</div>
+
 <!-- <form>
   <div *ngFor="let element of questions; let idx = index">    
     <p>{{ element }}</p>

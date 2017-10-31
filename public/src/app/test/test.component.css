@@ -1,11 +1,38 @@
 .survey {
     background-color: gray;
-    margin: 20px;
     width: 600px;
-    margin: 0 auto;
+    margin: 10px auto;
 }
 p {
     font-weight: bold;
     margin-bottom: 7px;
     margin-top: 14px;
+}
+h3 {
+    margin: 0px;
+}
+.personality {
+    border: 1px solid black;
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    padding: 10px;
+}
+.personality p {
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 5px; 
+    margin-bottom: 0;
+}
+.personality label {
+    font-style: italic;
+    font-size: 10pt;
+}
+.personality-wrapper {
+    background-color: orange;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
 }

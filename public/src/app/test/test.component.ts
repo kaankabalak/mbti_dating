@@ -176,6 +176,29 @@ export class TestComponent implements OnInit {
     result: ''
   };
 
+  // list of possible personalities if any of the types are equal
+  personalityList = [""];
+
+  personalityDictionary = {
+    ISTJ: ["The Duty Fulfiller", "Serious and quiet, interested in security and peaceful living. Extremely thorough, responsible, and dependable. Well-developed powers of concentration. Usually interested in supporting and promoting traditions and establishments. Well-organized and hard working, they work steadily towards identified goals. They can usually accomplish any task once they have set their mind to it. "],
+    ISTP: ["The Mechanic", "Quiet and reserved, interested in how and why things work. Excellent skills with mechanical things. Risk-takers who they live for the moment. Uncomplicated in their desires. Loyal to their peers and to their internal value systems, but not overly concerned with respecting laws and rules if they get in the way of getting something done. Detached and analytical, they excel at finding solutions to practical problems."],
+    ISFJ: ["The Nurturer", "Quiet, kind, and conscientious. Can be depended on to follow through. Usually puts the needs of others above their own needs. Stable and practical, they value security and traditions. Well-developed sense of space and function. Rich inner world of observations about people. Extremely perceptive of other's feelings. Interested in serving others."],
+    ISFP: ["The Artist", "Quiet, serious, sensitive and kind. Do not like conflict, and not likely to do things which may generate conflict. Loyal and faithful. Extremely well-developed senses, and aesthetic appreciation for beauty. Not interested in leading or controlling others. Flexible and open-minded. Likely to be original and creative. Enjoy the present moment."],
+    INFJ: ["The Protector", "Quietly forceful, original, and sensitive. Tend to stick to things until they are done. Extremely intuitive about people, and concerned for their feelings. Well-developed value systems which they strictly adhere to. Well-respected for their perserverence in doing the right thing. Likely to be individualistic, rather than leading or following. "],
+    INFP: ["The Idealist", "Quiet, reflective, and idealistic. Interested in serving humanity. Well-developed value system, which they strive to live in accordance with. Extremely loyal. Adaptable and laid-back unless a strongly-held value is threatened. Usually talented writers. Mentally quick, and able to see possibilities. Interested in understanding and helping people."],
+    INTJ: ["The Scientist", "Independent, original, analytical, and determined. Have an exceptional ability to turn theories into solid plans of action. Highly value knowledge, competence, and structure. Driven to derive meaning from their visions. Long-range thinkers. Have very high standards for their performance, and the performance of others. Natural leaders, but will follow if they trust existing leaders."],
+    INTP: ["The Thinker", "Logical, original, creative thinkers. Can become very excited about theories and ideas. Exceptionally capable and driven to turn theories into clear understandings. Highly value knowledge, competence and logic. Quiet and reserved, hard to get to know well. Individualistic, having no interest in leading or following others."],
+    
+    ESTP: ["The Doer", "Friendly, adaptable, action-oriented. \"Doers\" who are focused on immediate results. Living in the here-and-now, they're risk-takers who live fast-paced lifestyles. Impatient with long explanations. Extremely loyal to their peers, but not usually respectful of laws and rules if they get in the way of getting things done. Great people skills."],
+    ESTJ: ["The Guardian", "Practical, traditional, and organized. Likely to be athletic. Not interested in theory or abstraction unless they see the practical application. Have clear visions of the way things should be. Loyal and hard-working. Like to be in charge. Exceptionally capable in organizing and running activities. \"Good citizens\" who value security and peaceful living."],
+    ESFP: ["The Performer", "People-oriented and fun-loving, they make things more fun for others by their enjoyment. Living for the moment, they love new experiences. They dislike theory and impersonal analysis. Interested in serving others. Likely to be the center of attention in social situations. Well-developed common sense and practical ability."],
+    ESFJ: ["The Caregiver", "Warm-hearted, popular, and conscientious. Tend to put the needs of others over their own needs. Feel strong sense of responsibility and duty. Value traditions and security. Interested in serving others. Need positive reinforcement to feel good about themselves. Well-developed sense of space and function."],
+    ENFP: ["The Inspirer", "Enthusiastic, idealistic, and creative. Able to do almost anything that interests them. Great people skills. Need to live life in accordance with their inner values. Excited by new ideas, but bored with details. Open-minded and flexible, with a broad range of interests and abilities."],
+    ENFJ: ["The Giver", " Popular and sensitive, with outstanding people skills. Externally focused, with real concern for how others think and feel. Usually dislike being alone. They see everything from the human angle, and dislike impersonal analysis. Very effective at managing people issues, and leading group discussions. Interested in serving others, and probably place the needs of others over their own needs. "],
+    ENTP: ["The Visionary", " Creative, resourceful, and intellectually quick. Good at a broad range of things. Enjoy debating issues, and may be into \"one-up-manship\". They get very excited about new ideas and projects, but may neglect the more routine aspects of life. Generally outspoken and assertive. They enjoy people and are stimulating company. Excellent ability to understand concepts and apply logic to find solutions. "],
+    ENTJ: ["The Executive", "Assertive and outspoken - they are driven to lead. Excellent ability to understand difficult organizational problems and create solid solutions. Intelligent and well-informed, they usually excel at public speaking. They value knowledge and competence, and usually have little patience with inefficiency or disorganization. "]
+  };
+
   ngOnInit() {
     for (let i=0; i<this.optionBank.length; i++) {
       this.test.answers.push(null);
@@ -221,46 +244,31 @@ export class TestComponent implements OnInit {
     this.personality.result += (this.personality.isJ === "Equal") ? "X" : (this.personality.isJ ? "J" : "P");
 
     if (this.personality.result.indexOf("X") > -1) {
-      let indices = [];
-      let possibility = ""
-      let personalityList = [""];
-      let finalPersList = [];
-      for (let i = 0; i < this.personality.result.length; i++) {
-        if (this.personality.result[i] === "X") {
-          indices.push(i);
-        }
-      }
-      console.log(indices);
-
-      // for (let i = 0; i < Math.pow(2,indices.length); i++) {
-      //   personalityList.push(this.personality.result);
-      // }
-
       let count = 0;
       for (let i = 0; i < this.personality.result.length; i++) {
         if (this.personality.result[i] !== "X") {
-          for (let j = 0; j < personalityList.length; j++) {
-            personalityList[j] += this.personality.result[i];
+          for (let j = 0; j < this.personalityList.length; j++) {
+            this.personalityList[j] += this.personality.result[i];
           }
         }
         else {
-          let length = personalityList.length;
+          let length = this.personalityList.length;
           for (let k = 0; k < length; k++) {
-            personalityList.push(personalityList[k]);
+            this.personalityList.push(this.personalityList[k]);
           }
-          for (let k = 0; k < personalityList.length; k++) {
-            if (k < personalityList.length/2) {
-              personalityList[k] += this.personalityCats[i][0];
+          for (let k = 0; k < this.personalityList.length; k++) {
+            if (k < this.personalityList.length/2) {
+              this.personalityList[k] += this.personalityCats[i][0];
             }
             else {
-              personalityList[k] += this.personalityCats[i][1];
+              this.personalityList[k] += this.personalityCats[i][1];
             }
           }
           count++;
         }
       }
 
-      console.log(personalityList);
+      console.log(this.personalityList);
       
     }
   }
