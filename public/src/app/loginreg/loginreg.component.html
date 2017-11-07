@@ -33,7 +33,18 @@
                 <option value="male">Male</option>
                 <option value="female">Female</option>
             </select>
-          </div>  
+          </div>
+          <div class="multi-input">
+            <select id="personality" name="personality" [(ngModel)]="newuser.personality">
+                <option value="" [disabled]="true">Select your personality type</option>
+                <option value="Test">I don't know my personality type</option>
+                <option *ngFor="let key of personalityKeys" value="{{key}}">
+                  {{key}} ({{personalityDictionary[key][0]}})
+                </option>
+            </select>
+            <i class="fa fa-info-circle tooltip" aria-hidden="true"
+               title="{{personalityDictionary[newuser.personality][1]}}"></i> 
+          </div>             
           <input type="text" class="input-field" [(ngModel)]="newuser.zipcode" name="zipcode" placeholder="Zipcode">
           <input type="text" class="input-field" [(ngModel)]="newuser.email" name="emailRegister" placeholder="Email">
           <input type="password" class="input-field" [(ngModel)]="newuser.password" name="passwordRegister" placeholder="Password">
@@ -41,7 +52,7 @@
           <textarea id="description"  [(ngModel)]="newuser.description" name="description"
           placeholder="Description (max. 150 chars)" maxlength="150">
           </textarea>
-          <input type="submit" id="submit" value="Take the test!">
+          <input type="submit" id="submit" value="Submit">
         </form>
       </div>
   </div>

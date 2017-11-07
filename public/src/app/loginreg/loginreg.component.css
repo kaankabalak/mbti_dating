@@ -30,9 +30,14 @@ form input,textarea {
     display: block;
 }
 i.fa-venus-mars, i.fa-binoculars {
-    margin: 0;
+    margin: 4px 0 0 0;
     font-size: 13px;
     width: 17px;
+}
+i.fa-info-circle {
+    margin: 2px 0 0 0;
+    font-size: 16px;
+    width: 13px;
 }
 .multi-input input{
     display: inline-block !important;
@@ -106,4 +111,11 @@ input[type="number"] {
     /* width: 100%; */
     width: 204px;
     padding: 5px;
+}
+#personality {
+    width: 183px;
+    margin-right: 2px;
+}
+#jBox1 {
+    width: 300px;
 }
