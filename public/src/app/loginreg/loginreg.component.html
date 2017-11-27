@@ -42,10 +42,9 @@
                   {{key}} ({{personalityDictionary[key][0]}})
                 </option>
             </select>
-            <span *ngIf="personalityDictionary[newuser.personality]" [hidden]='!newuser.personality || newuser.personality == "Test"'>
-                <i class="fa fa-info-circle tooltip" aria-hidden="true"
-                attr.data-content="{{personalityDictionary[newuser.personality][1]}}"></i> 
-            </span>
+            <i class="fa fa-info-circle tooltip" *ngIf="personalityDictionary[newuser.personality] || newuser.personality == 'Test'">
+              <span>{{personalityDictionary[newuser.personality][1]}}</span>
+            </i> 
           </div>             
           <input type="text" class="input-field" [(ngModel)]="newuser.zipcode" name="zipcode" placeholder="Zipcode">
           <input type="text" class="input-field" [(ngModel)]="newuser.email" name="emailRegister" placeholder="Email">
